@@ -1,10 +1,10 @@
 export default class MainScene extends Phaser.Scene {
     constructor() {
-        super('MainScene')
+        super("MainScene")
     }
 
     preload() {
-        console.log('preload')
+        console.log("preload")
     }
 
     create() {
