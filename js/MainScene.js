@@ -9,6 +9,7 @@ export default class MainScene extends Phaser.Scene {
 
     create() {
         console.log("create")
+        this.player = new Phaser.Physics.Matter.Sprite(this.matter.world)
     }
 
     update() {
