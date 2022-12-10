@@ -1,3 +1,5 @@
+import Player from './Player.js'
+
 export default class MainScene extends Phaser.Scene {
     constructor() {
         super("MainScene")
@@ -11,7 +13,7 @@ export default class MainScene extends Phaser.Scene {
 
     create() {
         console.log("create")
-        this.player = new Phaser.Physics.Matter.Sprite(this.matter.world, 0, 0, 'female', 'townsfolk_f_idle_1');
+        this.player = new Player(this.matter.world, 0, 0, 'female', 'townsfolk_f_idle_1');
         this.add.existing(this.player)
         this.inputKeys = this.input.keyboard.addKeys({
             up: Phaser.Input.Keyboard.KeyCodes.W,
