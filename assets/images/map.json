@@ -1,11 +1,4 @@
 { "compressionlevel":-1,
- "editorsettings":
-    {
-     "export":
-        {
-         "format":"json"
-        }
-    },
  "height":16,
  "infinite":false,
  "layers":[
@@ -39,44 +32,92 @@
         }, 
         {
          "draworder":"topdown",
-         "id":3,
+         "id":4,
          "name":"Resources",
          "objects":[
                 {
-                 "class":"",
+                 "class":"tree",
                  "gid":21,
                  "height":32,
-                 "id":1,
+                 "id":17,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.8
+                        }],
                  "rotation":0,
                  "visible":true,
                  "width":32,
-                 "x":64,
-                 "y":160
+                 "x":160,
+                 "y":128
                 }, 
                 {
-                 "class":"",
+                 "class":"bush",
                  "gid":22,
                  "height":32,
-                 "id":5,
+                 "id":18,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
                  "rotation":0,
                  "visible":true,
                  "width":32,
-                 "x":192,
+                 "x":288,
+                 "y":224
+                }, 
+                {
+                 "class":"rock",
+                 "gid":23,
+                 "height":32,
+                 "id":19,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "visible":true,
+                 "width":32,
+                 "x":96,
+                 "y":192
+                }, 
+                {
+                 "class":"rock",
+                 "gid":23,
+                 "height":32,
+                 "id":21,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "visible":true,
+                 "width":32,
+                 "x":224,
                  "y":160
                 }, 
                 {
                  "class":"",
-                 "gid":23,
-                 "height":32,
-                 "id":13,
+                 "ellipse":true,
+                 "height":1,
+                 "id":25,
                  "name":"",
                  "rotation":0,
                  "visible":true,
-                 "width":32,
-                 "x":131,
-                 "y":159
+                 "width":0,
+                 "x":184,
+                 "y":108
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -84,8 +125,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":4,
- "nextobjectid":16,
+ "nextlayerid":5,
+ "nextobjectid":29,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
@@ -138,7 +179,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":3,
                      "name":"",
                      "objects":[
                             {
@@ -195,7 +235,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -227,7 +266,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -302,7 +340,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -334,7 +371,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":3,
                      "name":"",
                      "objects":[
                             {
@@ -384,7 +420,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -441,7 +476,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {
@@ -473,7 +507,6 @@
                  "objectgroup":
                     {
                      "draworder":"index",
-                     "id":2,
                      "name":"",
                      "objects":[
                             {

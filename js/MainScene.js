@@ -22,7 +22,7 @@ export default class MainScene extends Phaser.Scene {
         layer1.setCollisionByProperty({collides: true})
         this.matter.world.convertTilemapLayer(layer1)
 
-        //this.addResources()
+        this.addResources()
 
         this.player = new Player({scene: this.matter.world, x: 100, y: 100, texture: 'female', frame: 'townsfolk_f_idle_1'});
 
@@ -34,25 +34,27 @@ export default class MainScene extends Phaser.Scene {
         })
     }
 
-    // addResources() {
-    //     const resources = this.map.getObjectLayer('Resources')
-    //     console.log('Resources ', resources)
-    //     resources.objects.forEach( resource => {
-    //         let resourceItem = new Phaser.Matter.Sprite(this.matter.world, resource.x, resource.y, 'resources', resource.type)
+    addResources() {
+        const resources = this.map.getObjectLayer('Resources')
+        // const tree = resources.objects.filter((zone) => zone.class === 'tree');
 
-    //         let yOrigin = resource.properties.find(p => p.name == 'yOrigin').useDebugValue(value)
-    //         resourceItem.x += resourceItem.width/2
-    //         resourceItem.y -= resourceItem.height/2
-    //         resourceItem = resourceItem.y + resourceItem.height * (yOrigin - 0.5)
+        console.log('resources ', resources.objects)
+        resources.objects.forEach( resource => {
+            let resourceItem = new Phaser.Matter.Sprite(this.matter.world, resource.x, resource.y, 'resources', resource.class)
 
-    //         const {Body,Bodies} = Phaser.Physics.Matter.Matter
-    //         let circleCollider = Bodies.circle(resourceItem.x, resourceItem.y, 12, {isSensor: false, label:'collider'})
-    //         resourceItem.setExistingBody(circleCollider)
-    //         resourceItem.setStatic(true)
-    //         resourceItem.setOrigin(0.5,yOrigin)
-    //         this.add.existing(resourceItem)
-    //     })
-    // }
+            let yOrigin = resource.properties.find(p => p.name == 'yOrigin').useDebugValue(value)
+            resourceItem.x += resourceItem.width/2
+            resourceItem.y -= resourceItem.height/2
+            resourceItem = resourceItem.y + resourceItem.height * (yOrigin - 0.5)
+
+            const {Body,Bodies} = Phaser.Physics.Matter.Matter
+            let circleCollider = Bodies.circle(resourceItem.x, resourceItem.y, 12, {isSensor: false, label:'collider'})
+            resourceItem.setExistingBody(circleCollider)
+            resourceItem.setStatic(true)
+            resourceItem.setOrigin(0.5,yOrigin)
+            this.add.existing(resourceItem)
+        })
+    }
 
     update() {
         this.player.update()
