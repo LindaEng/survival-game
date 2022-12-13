@@ -38,20 +38,22 @@ export default class MainScene extends Phaser.Scene {
         const resources = this.map.getObjectLayer('Resources')
         // const tree = resources.objects.filter((zone) => zone.class === 'tree');
 
-        console.log('resources ', resources.objects)
+        
         resources.objects.forEach( resource => {
-            let resourceItem = new Phaser.Matter.Sprite(this.matter.world, resource.x, resource.y, 'resources', resource.class)
+            let resourceItem = new Phaser.Physics.Matter.Sprite(this.matter.world, resource.x, resource.y, 'resources', resource.properties[0].value)
 
-            let yOrigin = resource.properties.find(p => p.name == 'yOrigin').useDebugValue(value)
+
+            let yOrigin = resource.properties[1].value
             resourceItem.x += resourceItem.width/2
             resourceItem.y -= resourceItem.height/2
-            resourceItem = resourceItem.y + resourceItem.height * (yOrigin - 0.5)
+
+            resourceItem.y = resourceItem.y + resourceItem.height * (yOrigin - 0.9)
 
             const {Body,Bodies} = Phaser.Physics.Matter.Matter
             let circleCollider = Bodies.circle(resourceItem.x, resourceItem.y, 12, {isSensor: false, label:'collider'})
             resourceItem.setExistingBody(circleCollider)
             resourceItem.setStatic(true)
-            resourceItem.setOrigin(0.5,yOrigin)
+            resourceItem.setOrigin(0.5)
             this.add.existing(resourceItem)
         })
     }
