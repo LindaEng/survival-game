@@ -41,16 +41,15 @@ export default class MainScene extends Phaser.Scene {
         
         resources.objects.forEach( resource => {
             let resourceItem = new Phaser.Physics.Matter.Sprite(this.matter.world, resource.x, resource.y, 'resources', resource.properties[0].value)
-
-
             let yOrigin = resource.properties[1].value
+
             resourceItem.x += resourceItem.width/2
             resourceItem.y -= resourceItem.height/2
-
             resourceItem.y = resourceItem.y + resourceItem.height * (yOrigin - 0.9)
 
             const {Body,Bodies} = Phaser.Physics.Matter.Matter
             let circleCollider = Bodies.circle(resourceItem.x, resourceItem.y, 12, {isSensor: false, label:'collider'})
+            
             resourceItem.setExistingBody(circleCollider)
             resourceItem.setStatic(true)
             resourceItem.setOrigin(0.5)
