@@ -1,4 +1,5 @@
 import Player from './Player.js'
+import Resource from './Resource.js'
 
 export default class MainScene extends Phaser.Scene {
     constructor() {
@@ -7,9 +8,10 @@ export default class MainScene extends Phaser.Scene {
 
     preload() {
         Player.preload(this)
+        Resource.preload(this)
         this.load.image('tiles', 'assets/images/RPG Nature Tileset.png')
         this.load.tilemapTiledJSON('map', 'assets/images/map.json')
-        this.load.atlas('resources', 'assets/images/resources.png', 'assets/images/resources_atlas.json')
+        
     }
 
     create() {
@@ -40,20 +42,8 @@ export default class MainScene extends Phaser.Scene {
 
         
         resources.objects.forEach( resource => {
-            let resourceItem = new Phaser.Physics.Matter.Sprite(this.matter.world, resource.x, resource.y, 'resources', resource.properties[0].value)
-            let yOrigin = resource.properties[1].value
-
-            resourceItem.x += resourceItem.width/2
-            resourceItem.y -= resourceItem.height/2
-            resourceItem.y = resourceItem.y + resourceItem.height * (yOrigin - 0.9)
-
-            const {Body,Bodies} = Phaser.Physics.Matter.Matter
-            let circleCollider = Bodies.circle(resourceItem.x, resourceItem.y, 12, {isSensor: false, label:'collider'})
-            
-            resourceItem.setExistingBody(circleCollider)
-            resourceItem.setStatic(true)
-            resourceItem.setOrigin(0.5)
-            this.add.existing(resourceItem)
+            let resourceItem = new Resource({scene: this, resource})
+            console.log('RESOURCE ITEM ', resourceItem)
         })
     }
 
