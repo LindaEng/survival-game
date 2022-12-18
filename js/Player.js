@@ -3,6 +3,13 @@
         let {scene, x, y, texture, frame} = data
         super(scene, x, y, texture, frame)
         this.scene.add.existing(this)
+        //weapon - pickaxe is at cell 162
+        this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'items', 162)
+        //scale the size of weapon down
+        this.spriteWeapon.setScale(0.8)
+        //set the origin
+        this.spriteWeapon.setOrigin(0.25, 0.75)
+        this.scene.add.existing(this.spriteWeapon)
 
         const {Body, Bodies} = Phaser.Physics.Matter.Matter
         let playerCollider = Bodies.circle(this.x, this.y, 12, { isSensor: false, label: 'playerCollider'})
@@ -13,11 +20,14 @@
         })
         this.setExistingBody(compoundBody)
         this.setFixedRotation()
+        //flip our character if our pointer is facing left
+        this.scene.input.on('pointermove', pointer => this.setFlipX(pointer.worldX < this.x))
     }
 
     static preload(scene) {
         scene.load.atlas('female', 'assets/images/female.png', 'assets/images/female_atlas.json')
         scene.load.animation('female_anim', 'assets/images/female_anim.json')
+        scene.load.spritesheet('items', 'assets/images/items.png', {frameWidth:32, frameHeight:32})
     }
 
     get velocity() {
@@ -45,6 +55,28 @@
             this.anims.play('female_walk', true)
         } else {
             this.anims.play('female_idle', true)
+        }
+        this.spriteWeapon.setPosition(this.x, this.y)
+        this.weaponRotate()
+    }
+
+    weaponRotate() {
+        //mouse click
+        let pointer = this.scene.input.activePointer
+        if(pointer.isDown) {
+            this.weaponRotation += 6
+        } else {
+            this.weaponRotation = 0
+        }
+        if(this.weaponRotation > 100) {
+            this.weaponRotation = 0
+        }
+        if(this.flipX) {
+            //flip weapon to left 
+            this.spriteWeapon.setAngle(-this.weaponRotation - 90)
+        } else {
+            //if we are facing right
+            this.spriteWeapon.setAngle(this.weaponRotation)
         }
     }
 }
