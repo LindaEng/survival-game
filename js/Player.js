@@ -72,6 +72,7 @@
             this.weaponRotation = 0
         }
         if(this.weaponRotation > 100) {
+            this.wackStuff()
             this.weaponRotation = 0
         }
         if(this.flipX) {
@@ -101,6 +102,14 @@
                 this.touching = this.touching.filter(gameObject => gameObject !== other.gameObjectB)
                 console.log(this.touching.length, other.gameObjectB.name)
             }
+        })
+    }
+
+    wackStuff() {
+        this.touching = this.touching.filter(gameObject => gameObject.hit && !gameObject.dead)
+        this.touching.forEach(gameObject => {
+            gameObject.hit()
+            if(gameObject.dead) gameObject.destroy()
         })
     }
 }

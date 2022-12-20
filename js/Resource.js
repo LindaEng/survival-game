@@ -6,6 +6,9 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         let {scene, resource} = data
         super(scene.matter.world, resource.x, resource.y, 'resources', resource.properties[0].value)
         this.scene.add.existing(this)
+        //adding health to item
+        this.health = 5
+
         //required when working with collider
         this.name = resource.properties[0].value
         let yOrigin = resource.properties[1].value
@@ -20,5 +23,15 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         this.setExistingBody(circleCollider)
         this.setStatic(true)
         this.setOrigin(0.5)
+    }
+
+    get dead() {
+        return this.health <= 0
+    }
+
+    hit = () => {
+        if(this.sound) this.sound.play()
+        this.health--
+        console.log(`Hitting ${this.nae} Health: ${this.health}`)
     }
 }
