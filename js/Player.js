@@ -2,6 +2,7 @@
     constructor(data) {
         let {scene, x, y, texture, frame} = data
         super(scene, x, y, texture, frame)
+        this.touching = []
         this.scene.add.existing(this)
         //weapon - pickaxe is at cell 162
         this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'items', 162)
@@ -20,6 +21,8 @@
         })
         this.setExistingBody(compoundBody)
         this.setFixedRotation()
+        //method to handle when player collides with game object
+        this.CreateMiningCollisions(playerSensor)
         //flip our character if our pointer is facing left
         this.scene.input.on('pointermove', pointer => this.setFlipX(pointer.worldX < this.x))
     }
@@ -72,11 +75,32 @@
             this.weaponRotation = 0
         }
         if(this.flipX) {
-            //flip weapon to left 
+            //flip weapon to left
             this.spriteWeapon.setAngle(-this.weaponRotation - 90)
         } else {
             //if we are facing right
             this.spriteWeapon.setAngle(this.weaponRotation)
         }
+    }
+
+    CreateMiningCollisions(playerSensor) {
+        //when we move towards a game object add to array
+        this.scene.matterCollision.addOnCollideStart({
+            objectA: [playerSensor],
+            callback: other => {
+                if(other.bodyB.isSensor) return
+                this.touching.push(other.gameObjectB)
+                console.log(this.touching.length, other.gameObjectB.name)
+            },
+            context: this.scene,
+        })
+        //when we move away from a game object -> remove from array
+        this.scene.matterCollision.addOnCollideEnd( {
+            objectA: [playerSensor],
+            callback: other => {
+                this.touching = this.touching.filter(gameObject => gameObject !== other.gameObjectB)
+                console.log(this.touching.length, other.gameObjectB.name)
+            }
+        })
     }
 }

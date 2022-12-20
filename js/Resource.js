@@ -6,7 +6,8 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         let {scene, resource} = data
         super(scene.matter.world, resource.x, resource.y, 'resources', resource.properties[0].value)
         this.scene.add.existing(this)
-
+        //required when working with collider
+        this.name = resource.properties[0].value
         let yOrigin = resource.properties[1].value
 
         this.x += this.width/2
