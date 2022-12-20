@@ -11,11 +11,11 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         this.scene.add.existing(this)
         //adding health to item
         this.health = 5
-        //assigning audio to sound
-        this.sound = this.scene.sound.add(this.name)
-
         //required when working with collider
         this.name = resource.properties[0].value
+
+        //assigning audio to sound
+        this.sound = this.scene.sound.add(this.name)
         let yOrigin = resource.properties[1].value
 
         this.x += this.width/2
