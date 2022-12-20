@@ -100,7 +100,6 @@
             objectA: [playerSensor],
             callback: other => {
                 this.touching = this.touching.filter(gameObject => gameObject !== other.gameObjectB)
-                console.log(this.touching.length, other.gameObjectB.name)
             }
         })
     }
