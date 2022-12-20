@@ -1,6 +1,9 @@
 export default class Resource extends Phaser.Physics.Matter.Sprite {
     static preload(scene) {
         scene.load.atlas('resources', 'assets/images/resources.png', 'assets/images/resources_atlas.json')
+        scene.load.audio('tree', 'assets/audio/tree.mp3')
+        scene.load.audio('rock', 'assets/audio/rock.mp3')
+        scene.load.audio('bush', 'assets/audio/bush.mp3')
     }
     constructor(data) {
         let {scene, resource} = data
@@ -8,6 +11,8 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         this.scene.add.existing(this)
         //adding health to item
         this.health = 5
+        //assigning audio to sound
+        this.sound = this.scene.sound.add(this.name)
 
         //required when working with collider
         this.name = resource.properties[0].value
