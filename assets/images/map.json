@@ -43,6 +43,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"tree"
@@ -66,6 +71,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"bush"
@@ -82,58 +92,17 @@
                  "y":224
                 }, 
                 {
-                 "class":"rock",
-                 "gid":23,
-                 "height":32,
-                 "id":19,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"rock"
-                        }, 
-                        {
-                         "name":"yOrigin",
-                         "type":"float",
-                         "value":0.6
-                        }],
-                 "rotation":0,
-                 "visible":true,
-                 "width":32,
-                 "x":96,
-                 "y":192
-                }, 
-                {
-                 "class":"rock",
-                 "gid":23,
-                 "height":32,
-                 "id":21,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"rock"
-                        }, 
-                        {
-                         "name":"yOrigin",
-                         "type":"float",
-                         "value":0.6
-                        }],
-                 "rotation":0,
-                 "visible":true,
-                 "width":32,
-                 "x":224,
-                 "y":160
-                }, 
-                {
                  "class":"tree",
                  "gid":21,
                  "height":32,
                  "id":29,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
                         {
                          "name":"type",
                          "type":"string",
@@ -158,6 +127,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"tree"
@@ -180,6 +154,11 @@
                  "id":31,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
                         {
                          "name":"type",
                          "type":"string",
@@ -204,6 +183,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"tree"
@@ -226,6 +210,11 @@
                  "id":36,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
                         {
                          "name":"type",
                          "type":"string",
@@ -250,6 +239,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"tree"
@@ -272,6 +266,11 @@
                  "id":38,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
                         {
                          "name":"type",
                          "type":"string",
@@ -296,6 +295,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"tree"
@@ -318,6 +322,11 @@
                  "id":40,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
                         {
                          "name":"type",
                          "type":"string",
@@ -342,6 +351,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"bush"
@@ -364,6 +378,11 @@
                  "id":42,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
                         {
                          "name":"type",
                          "type":"string",
@@ -388,6 +407,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"bush"
@@ -402,8 +426,7 @@
                  "width":32,
                  "x":32,
                  "y":64
-                },
-            
+                }, 
                 {
                  "class":"bush",
                  "gid":22,
@@ -411,6 +434,11 @@
                  "id":44,
                  "name":"",
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
                         {
                          "name":"type",
                          "type":"string",
@@ -435,6 +463,11 @@
                  "name":"",
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"bush"
@@ -449,6 +482,91 @@
                  "width":32,
                  "x":448,
                  "y":320
+                },
+            
+                {
+                 "class":"rock",
+                 "gid":23,
+                 "height":32,
+                 "id":46,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[275,275]"
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"rock"
+                        }, 
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "visible":true,
+                 "width":32,
+                 "x":95.3821138211382,
+                 "y":193.235772357724
+                }, 
+                {
+                 "class":"rock",
+                 "gid":23,
+                 "height":32,
+                 "id":47,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[275,275]"
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"rock"
+                        }, 
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "visible":true,
+                 "width":32,
+                 "x":255.544715447154,
+                 "y":159.089430894309
+                }, 
+                {
+                 "class":"rock",
+                 "gid":23,
+                 "height":32,
+                 "id":48,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[275,275]"
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"rock"
+                        }, 
+                        {
+                         "name":"yOrigin",
+                         "type":"float",
+                         "value":0.6
+                        }],
+                 "rotation":0,
+                 "visible":true,
+                 "width":32,
+                 "x":256.357723577236,
+                 "y":316.813008130081
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -457,7 +575,7 @@
          "y":0
         }],
  "nextlayerid":5,
- "nextobjectid":46,
+ "nextobjectid":49,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
@@ -480,6 +598,11 @@
                  "id":20,
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[272,272]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"tree"
@@ -495,6 +618,11 @@
                  "id":21,
                  "properties":[
                         {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[228,228]"
+                        }, 
+                        {
                          "name":"type",
                          "type":"string",
                          "value":"bush"
@@ -509,6 +637,11 @@
                  "class":"rock",
                  "id":22,
                  "properties":[
+                        {
+                         "name":"drops",
+                         "type":"string",
+                         "value":"[275,275]"
+                        }, 
                         {
                          "name":"type",
                          "type":"string",
