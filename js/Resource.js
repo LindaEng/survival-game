@@ -6,6 +6,7 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         scene.load.audio('tree', 'assets/audio/tree.mp3')
         scene.load.audio('rock', 'assets/audio/rock.mp3')
         scene.load.audio('bush', 'assets/audio/bush.mp3')
+        scene.load.audio('pickup', 'assets/audio/pickup.mp3')
     }
     constructor(data) {
         let {scene, resource} = data
@@ -16,7 +17,6 @@ export default class Resource extends Phaser.Physics.Matter.Sprite {
         this.drops = JSON.parse(resource.properties.find(item => item.name == 'drops').value)
         //required when working with collider
         this.name = resource.properties.find(item => item.name === 'type').value
-        console.log(this.name , 'NAMAMAME')
         //assigning audio to sound
         this.sound = this.scene.sound.add(this.name)
         let yOrigin = resource.properties.find(item => item.name === 'yOrigin').value

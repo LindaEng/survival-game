@@ -23,6 +23,7 @@
         this.setFixedRotation()
         //method to handle when player collides with game object
         this.CreateMiningCollisions(playerSensor)
+        this.CreatePickupCollisions(playerCollider)
         //flip our character if our pointer is facing left
         this.scene.input.on('pointermove', pointer => this.setFlipX(pointer.worldX < this.x))
     }
@@ -104,6 +105,23 @@
         })
     }
 
+    CreatePickupCollisions(playerCollider) {
+        //when we move towards a game object add to array
+        this.scene.matterCollision.addOnCollideStart({
+            objectA: [playerCollider],
+            callback: other => {
+                if(other.gameObjectB && other.gameObjectB.pickup) other.gameObjectB.pickup()
+            },
+            context: this.scene,
+        })
+        //when we move away from a game object -> remove from array
+        this.scene.matterCollision.addOnCollideActive( {
+            objectA: [playerCollider],
+            callback: other => {
+                if(other.gameObjectB && other.gameObjectB.pickup) other.gameObjectB.pickup() 
+            }
+        })
+    }
     wackStuff() {
         this.touching = this.touching.filter(gameObject => gameObject.hit && !gameObject.dead)
         this.touching.forEach(gameObject => {
