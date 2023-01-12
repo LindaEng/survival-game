@@ -5,11 +5,11 @@
         this.touching = []
         this.scene.add.existing(this)
         //weapon - pickaxe is at cell 162
-        this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'items', 162)
+        this.spriteWeapon = new Phaser.GameObjects.Sprite(this.scene, 0, 0, 'items', 238)
         //scale the size of weapon down
         this.spriteWeapon.setScale(0.8)
         //set the origin
-        this.spriteWeapon.setOrigin(0.25, 0.75)
+        this.spriteWeapon.setOrigin(0.05, 0.75)
         this.scene.add.existing(this.spriteWeapon)
 
         const {Body, Bodies} = Phaser.Physics.Matter.Matter
